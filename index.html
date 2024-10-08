@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CoinApex: The crypto trading platform trusted by millions</title>
+  <link rel="icon" href="./assets/images/favicon.ico" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/jquery-3.7.1.min.js"></script>
+  <script src="assets/tailwind.js"></script>
+  <link rel="stylesheet" href="./assets/index.css" />
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1211799346681320');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1211799346681320&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+
+</head>
+
+<body>
+  <div id="showloading" class=" h-screen w-full left-0 bg-[#adadadbe] top-0 fixed duration-1000 z-50">
+    <div class=' space-x-2 justify-center flex items-center mt-[20%]'>
+      <div class='h-8  w-8 bg-black rounded-full animate-bounce [animation-delay:0s]'></div>
+      <div class='h-8 w-8 bg-black rounded-full animate-bounce [animation-delay:-0.3s]'></div>
+      <div class='h-8 w-8 bg-black rounded-full animate-bounce'></div>
+    </div>
+  </div>
+
+  <header class=" bg-[#7132F5] relative  shadow-lg">
+    <div class="mx-2 sm:mx-20" id="header">
+      <div class=" flex items-center justify-between">
+        <div class="py-5  text-white flex gap-10">
+          <a href="./index.html">
+            <h1 class="text-5xl font-semibold text-white">Coin<span class="text-yellow-400">Apex</span> </h1>
+          </a>
+
+          <div class="*:mt-2 hidden md:flex items-center gap-5 ">
+            <div>
+              <a href="#" class="text-2xl font-medium hover:text-gray-300">Explore </a>
+            </div>
+            <div>
+              <a href="#" class="text-2xl font-medium hover:text-gray-300"> Prices </a>
+            </div>
+            <div>
+              <a href="#" class="text-2xl font-medium hover:text-gray-300"> Why Kraken? </a>
+            </div>
+            <div>
+              <a href="#" class="text-2xl font-medium hover:text-gray-300"> Learn </a>
+            </div>
+            <div>
+              <a href="#" class="text-2xl font-medium hover:text-gray-300"> Support </a>
+            </div>
+
+          </div>
+
+
+        </div>
+
+        <div class="py-5 flex items-center gap-5 text-white">
+          <div class="hover:bg-[#a982ff9e] cursor-pointer rounded-full px-5 py-4">
+            <i class="ri-global-line text-4xl "></i>
+          </div>
+
+
+            <button
+             onclick="url()" class="py-5 px-10  border-white border text-white rounded-full text-2xl font-semibold hover:bg-[#6940c3] hover:text-white transition">
+              Sign in</button>
+            <button
+             onclick="url()" class="py-5 px-10  bg-white text-[#7132F5] rounded-full text-2xl font-semibold hover:bg-slate-200  transition">
+              Sign Up</button>
+
+
+
+
+
+          <label class="burger mr-5 md:hidden" id="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+
+
+        </div>
+      </div>
+
+
+
+
+      <div class="hidden" id="mobile">
+
+        <div class="p-5 flex flex-col gap-10 text-white">
+          <a href="" class="text-2xl font-medium hover:text-[#AA84F9]">Explore</a>
+          <a href="" class="text-2xl font-medium hover:text-[#AA84F9]">Prices</a>
+          <a href="" class="text-2xl font-medium hover:text-[#AA84F9]">Why Kraken?</a>
+          <a href="" class="text-2xl font-medium hover:text-[#AA84F9]">Learn</a>
+          <a href="" class="text-2xl font-medium hover:text-[#AA84F9]">Support</a>
+          <div>
+     
+              <button
+              onclick="url()"  class="py-5 px-10  border-white border text-white rounded-full text-2xl font-semibold hover:bg-[#6940c3] hover:text-white transition">
+                Sign in</button>
+    
+              <button
+              onclick="url()"  class="py-5 px-10  bg-white text-[#7132F5] rounded-full text-2xl font-semibold hover:bg-slate-200  transition">
+                Sign Up</button>
+       
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+  </header>
+
+
+
+
+  <main class=" custom">
+
+
+    <section class="bg-[#FAF7F6] py-10">
+      <div class="container mx-auto max-w-screen-xl">
+        <div class="text-xl font-semibold py-10">
+          <div class="text-[#7132F5]">Home / <span>Buy Crypto</span> / <span
+              class="text-gray-600 font-normal">Bitcoin</span></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-32">
+          <div class="flex justify-center md:justify-end">
+            <div class="text-center *:mb-5  md:max-w-[28rem]">
+              <img class="max-w-[7rem]" src="./assets/images/sym-btc_colored.svg" alt="">
+              <div class="text-[6rem] font-medium leading-[7rem]">Buy Bitcoin</div>
+              <div class="text-[2rem] text-gray-600 font-semibold">Sign up to buy BTC. Start with just $10.</div>
+              <div
+                class="flex justify-center items-center text-white font-semibold bg-[#7132F5] py-5 text-2xl rounded-full border-2 border-[#4b23a1] hover:bg-[#6235c4] transition-all duration-300 cursor-pointer w-fit px-10 mx-auto">
+                Buy Bitcoin
+              </div>
+              <img class="mx-auto max-w-[4rem]"
+                src="./assets/images/685105fd67e5282e5e1162d351d9ab6a7a2bb1de-464x464.svg" alt="">
+              <div class="font-medium text-[1.2rem]">Get the Kraken app</div>
+            </div>
+          </div>
+          <div class="border rounded-xl p-10 bg-white h-fit max-w-full md:max-w-[50rem]">
+
+
+            <div class="*:my-7 ">
+
+              <!-- ------------------------------ -->
+
+              <div class="relative">
+                <input
+                  class="block w-full p-4 ps-10 text-6xl text-gray-900 border border-gray-300 rounded-3xl  focus:ring-blue-500 focus:border-blue-500"
+                  value="10" id="input1" />
+
+                <div class="absolute top-[50%] -translate-y-[50%]  right-12 flex gap-2 items-center default"
+                  id="icon_cryto1">
+                  <img class="  max-w-[2.1rem] " src="./assets/images/sym-usd_colored.svg" alt="">
+                  <div class="font-semibold text-gray-600 text-2xl">USD</div>
+                </div>
+              </div>
+
+
+              <div class="flex justify-center">
+                <div
+                  class="flex justify-center items-center  w-[4rem] h-[4rem] bg-gray-200 rounded-full hover:bg-slate-300 cursor-pointer transition-all"
+                  id="change_icon">
+                  <svg class="h-12 w-12 text-purple-500 " viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" />
+                    <polyline points="16 3 20 7 16 11" />
+                    <line x1="6" y1="7" x2="20" y2="7" />
+                    <polyline points="8 13 4 17 8 21" />
+                    <line x1="4" y1="17" x2="17" y2="17" />
+                  </svg>
+                </div>
+              </div>
+
+              <div class="relative">
+                <input
+                  class="block w-full p-4 ps-10 text-6xl text-gray-900 border border-gray-300 rounded-3xl  focus:ring-blue-500 focus:border-blue-500"
+                  value="" id="input2" />
+
+                <div class="absolute top-[50%] -translate-y-[50%]  right-12 flex gap-2 items-center" id="icon_cryto2">
+                  <img class="  max-w-[2.1rem] " src="./assets/images/sym-btc_colored.svg" alt="">
+                  <div class="font-semibold text-gray-600 text-2xl">BTC</div>
+                </div>
+              </div>
+
+
+              <!-- ------------------------------ -->
+
+              <div
+                class="flex justify-center items-center text-white font-semibold bg-[#7132F5] py-5 text-2xl rounded-full border-2 border-[#4b23a1] hover:bg-[#6235c4] transition-all duration-300 cursor-pointer w-fit px-10 mx-auto">
+                Buy Bitcoin </div>
+
+              <div class="mx-auto">
+                <div class="flex items-center justify-center">
+                  <div class="flex items-center gap-4">
+                    <p>Pay securely with</p>
+                    <img class="max-w-[10rem]"
+                      src="./assets/images/55e683fa9352cfe74df0af029dc556c5abd3d960-278x100.webp" alt="">
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+
+          </div>
+        </div>
+
+
+        <section class="*:my-5 pt-20">
+          <div class="text-center max-w-[60rem] mx-auto">
+            <h1>How to buy Bitcoin</h1>
+            <p>You can buy Bitcoin on Kraken's crypto platform. Create your free account and connect a funding method to
+              buy over 200 cryptocurrencies including BTC. Kraken makes it quick and easy to get started.</p>
+          </div>
+
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-10 pt-10">
+            <div class="text-center bg-white rounded-3xl shadow-lg *:my-5 p-8">
+              <img src="./assets/images/fd8458964c6e58594c60eb49a69db20f0d6b7425-160x160.webp" alt=""
+                class="mx-auto max-w-[5rem]">
+              <h4 class="font-medium">Create your free Kraken account</h4>
+              <p>Provide your email address & country of residence.</p>
+            </div>
+            <div class="text-center bg-white rounded-3xl shadow-lg *:my-5 p-8">
+              <img src="./assets/images/b898804ea18f85c9307b9dd4e65ce8d577de0443-160x160.webp" alt=""
+                class="mx-auto max-w-[5rem]">
+              <h4 class="font-medium">Connect a funding method</h4>
+              <p>Fund your account with your preferred payment method.</p>
+            </div>
+            <div class="text-center bg-white rounded-3xl shadow-lg *:my-5 p-8">
+              <img src="./assets/images/800c09b84db833ed0fdf5d42731f76d72ad6f219-160x160.webp" alt=""
+                class="mx-auto max-w-[5rem]">
+              <h4 class="font-medium">Complete your Bitcoin purchase</h4>
+              <p>Buy Bitcoin with as little as $10.</p>
+            </div>
+          </div>
+
+          <div class="flex justify-center md:pt-20">
+            <div class="flex gap-3 justify-center">
+              <img src="./assets/images/sym-btc_colored.svg" alt="" class=" max-w-[3rem]">
+              <img src="./assets/images/bba8ad5cf3396cad1b7bfc134c166276d66be211-97x78.webp" alt=""
+                class=" max-w-[3rem]">
+            </div>
+          </div>
+          <div class="text-3xl text-center font-medium">In the past 24 hours, Kraken clients bought 4,166 BTC worth
+            $268,284,863.</div>
+          <div
+            class="flex justify-center items-center text-white font-semibold bg-[#7132F5] py-5 text-2xl rounded-full border-2 border-[#4b23a1] hover:bg-[#6235c4] transition-all duration-300 cursor-pointer w-fit px-10 mx-auto">
+            Sign up
+          </div>
+
+
+
+        </section>
+      </div>
+
+
+    </section>
+
+    <section class="bg-white py-10 md:py-32">
+      <div class="container mx-auto max-w-screen-xl *:mb-10 md:*:mb-20">
+
+
+        <div class="text-center max-w-[60rem] mx-auto">
+          <h1>Why buy Bitcoin with Kraken?</h1>
+          <p>Kraken offers a safe and easy way to get started with crypto. Use our flexible payment methods to buy
+            Bitcoin with a credit card, debit card, bank transfer, and more.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-10">
+          <div class="bg-[#FAF7F6] p-10 md:p-14 rounded-3xl shadow-lg">
+            <img class="mx-auto" src="./assets/images/6e984280fca8e52363e66c38b32503c867980cad-1108x1172.webp" alt="">
+            <h4 class="text-center">Buy and sell 200+ cryptocurrencies</h4>
+          </div>
+          <div class="bg-[#FAF7F6] p-10 md:p-14 rounded-3xl shadow-lg">
+            <img class="mx-auto" src="./assets/images/b84f90691402ef39966c8c697b3a31bc9abf0a8e-1076x1140.webp" alt="">
+            <h4 class="text-center">Enjoy fast and flexible funding options
+            </h4>
+          </div>
+          <div class="bg-[#FAF7F6] p-10 md:p-14 rounded-3xl shadow-lg">
+            <img class="mx-auto" src="./assets/images/c9a771dd4b00518d4251d5aabbc22f42e816265d-1076x1148.webp" alt="">
+            <h4 class="text-center">Secure your crypto journey with Passkeys</h4>
+          </div>
+        </div>
+
+        <div
+          class="flex justify-center items-center text-white font-semibold bg-[#7132F5] py-5 text-2xl rounded-full border-2 border-[#4b23a1] hover:bg-[#6235c4] transition-all duration-300 cursor-pointer w-fit px-10 mx-auto">
+          Sign up
+        </div>
+
+        <div class="">
+          <div class="text-7xl mb-5 md:mb-20">About Bitcoin</div>
+          <p>Bitcoin is the world's largest cryptocurrency project. The bitcoin (BTC) cryptocurrency was the first of
+            its kind to be built on blockchain technology. Launched in 2009 by an anonymous developer under the
+            pseudonym Satoshi Nakamoto, Bitcoin remains the most widely accepted and traded cryptocurrency today. Like
+            the cryptocurrencies that followed it, Bitcoin was created to provide a decentralized electronic cash system
+            that operates without the intervention of a centralized authority. A global team of developers constantly
+            works on improving Bitcoin and its underlying technology.</p>
+
+          <div class="text-6xl mb-5 md:mb-14 mt-8 md:mt-52">What can you do with Bitcoin?</div>
+          <p>With Kraken, you can do more with Bitcoin. From making your first trade to utilizing our advanced Bitcoin
+            pro trading tools, all the Kraken features you need are backed by our robust security features and 24/7
+            support.</p>
+
+        </div>
+
+        <hr class="border-t-[0.2px]">
+
+        <div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+
+            <div class="flex">
+              <img class="max-w-[4rem] h-fit mx-0 pr-2"
+                src="./assets/images/027f129ad46ba099d1a19002a2e3fa945da5ae8c-129x128.webp" alt="">
+              <div>
+                <h5 class="text-[#7132F5] font-semibold"> Earn Bitcoin rewards </h5>
+                <p>Earn rewards with Bitcoin</p>
+              </div>
+            </div>
+            <div class="flex">
+              <img class="max-w-[4rem] h-fit mx-0 pr-2"
+                src="./assets/images/dfb084d432fd4d05e87be525b6143c874bb80fc7-129x128.webp" alt="">
+              <div>
+                <h5 class="text-[#7132F5] font-semibold"> Trade Bitcoin for NFTs </h5>
+                <p>Collect & trade NFTs</p>
+              </div>
+            </div>
+            <div class="flex">
+              <img class="max-w-[4rem] h-fit mx-0 pr-2"
+                src="./assets/images/c9e55e54d4f97df23aa11cc0bb748b8e014b286c-129x128.webp" alt="">
+              <div>
+                <h5 class="text-[#7132F5] font-semibold"> Bitcoin wallet </h5>
+                <p>Securely manage your BTC with Kraken Wallet</p>
+              </div>
+            </div>
+            <div class="flex">
+              <img class="max-w-[4rem] h-fit mx-0 pr-2"
+                src="./assets/images/aed5fe98e9e1e1816959cb1aeb8327d0d34765a6-128x128.webp" alt="">
+              <div>
+                <h5 class="text-[#7132F5] font-semibold"> Trade Bitcoin futures </h5>
+                <p>95+ perpetual futures</p>
+              </div>
+            </div>
+            <div class="flex">
+              <img class="max-w-[4rem] h-fit mx-0 pr-2"
+                src="./assets/images/d0f1b4bdb8ae0a7e130307f7081084fe55624a78-128x128.webp " alt="">
+              <div>
+                <h5 class="text-[#7132F5] font-semibold"> Bitcoin margin trading </h5>
+                <p>Trade with leverage</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="">
+
+          <div class="text-6xl mb-5 md:mb-14 mt-8 md:mt-52">Swap Bitcoin for other assets</div>
+          <p>After you buy Bitcoin, you can trade it for fiat currencies and other cryptocurrencies. Kraken offers over
+            200 Bitcoin trading pairs so you can move in and out of the market with ease.</p>
+
+        </div>
+
+        <hr class="border-t-[0.2px]">
+
+        <div>
+          <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+
+            <div class="flex items-center">
+              <div class="flex items-center w-[6.7rem] relative">
+                <img class="max-w-[4rem] h-fit mx-0 pr-2" src="./assets/images/sym-btc_colored.svg" alt="">
+                <img class="max-w-[4.6rem] h-fit mx-0 pr-2 absolute right-0 border-4 border-white rounded-full"
+                  src="./assets/images/sym-usd_colored.svg" alt="">
+              </div>
+              <div>
+                <h5 class="text-[#7132F5] font-semibold hover:underline cursor-pointer"> BTC to USD </h5>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="flex items-center w-[6.7rem] relative">
+                <img class="max-w-[4rem] h-fit mx-0 pr-2" src="./assets/images/sym-btc_colored.svg" alt="">
+                <img class="max-w-[4.6rem] h-fit mx-0 pr-2 absolute right-0 border-4 border-white rounded-full"
+                  src="./assets/images/sym-eur_colored.svg" alt="">
+              </div>
+              <div>
+                <h5 class="text-[#7132F5] font-semibold hover:underline cursor-pointer"> BTC to EUR </h5>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="flex items-center w-[6.7rem] relative">
+                <img class="max-w-[4rem] h-fit mx-0 pr-2" src="./assets/images/sym-btc_colored.svg" alt="">
+                <img class="max-w-[4.6rem] h-fit mx-0 pr-2 absolute right-0 border-4 border-white rounded-full"
+                  src="./assets/images/sym-eth_colored.svg" alt="">
+              </div>
+              <div>
+                <h5 class="text-[#7132F5] font-semibold hover:underline cursor-pointer"> BTC to ETH </h5>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="flex items-center w-[6.7rem] relative">
+                <img class="max-w-[4rem] h-fit mx-0 pr-2" src="./assets/images/sym-btc_colored.svg" alt="">
+                <img class="max-w-[4.6rem] h-fit mx-0 pr-2 absolute right-0 border-4 border-white rounded-full"
+                  src="./assets/images/sym-usdt_colored.svg" alt="">
+              </div>
+              <div>
+                <h5 class="text-[#7132F5] font-semibold hover:underline cursor-pointer">
+                  BTC to USDT </h5>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="flex items-center w-[6.7rem] relative">
+                <img class="max-w-[4rem] h-fit mx-0 pr-2" src="./assets/images/sym-btc_colored.svg" alt="">
+                <img class="max-w-[4.6rem] h-fit mx-0 pr-2 absolute right-0 border-4 border-white rounded-full"
+                  src="./assets/images/sym-gbp_colored.svg" alt="">
+              </div>
+              <div>
+                <h5 class="text-[#7132F5] font-semibold hover:underline cursor-pointer"> BTC to GBP </h5>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="flex items-center w-[6.7rem] relative">
+                <img class="max-w-[4rem] h-fit mx-0 pr-2" src="./assets/images/sym-btc_colored.svg" alt="">
+                <img class="max-w-[4.6rem] h-fit mx-0 pr-2 absolute right-0 border-4 border-white rounded-full"
+                  src="./assets/images/sym-cad_colored.svg" alt="">
+              </div>
+              <div>
+                <h5 class="text-[#7132F5] font-semibold hover:underline cursor-pointer"> BTC to CAD </h5>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="">
+          <div class="text-6xl mb-5 md:mb-14 mt-8 md:mt-52">Bitcoin FAQ</div>
+        </div>
+        <hr class="border-t-[0.2px]">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+          <div class="*:mb-4">
+            <h4>Is Bitcoin a good investment?</h4>
+            <p>The short answer is, it depends on your own individual circumstances and risk tolerance. For those that
+              see a long term prospect behind decentralization, Bitcoin may be a worthwhile purchase.</p>
+          </div>
+          <div class="*:mb-4">
+            <h4>How much does it cost to buy 1 Bitcoin?</h4>
+            <p>At the current market rate, it costs $64,097.00 to purchase one BTC. Kraken makes it easy to buy & <span
+                class="text-[#7132F5] font-semibold">sell Bitcoin</span> with confidence.</p>
+          </div>
+          <div class="*:mb-4">
+            <h4>Can I buy Bitcoin with a debit card?</h4>
+            <p>You can buy Bitcoin with a debit card on Kraken. We offer <span class="text-[#7132F5] font-semibold">
+                several different ways to fund your account with cash</span> or cryptocurrency.</p>
+          </div>
+          <div class="*:mb-4">
+            <h4>How to trade Bitcoin</h4>
+            <p>You can trade Bitcoin by first creating a Kraken account. Once sign up is complete and your account is
+              funded, select your desired BTC trading pair and start trading Bitcoin. Our all in one, powerful interface
+              lets you execute your trading strategy.</p>
+          </div>
+          <div class="*:mb-4">
+            <h4>Can I buy $100 worth of Bitcoin?</h4>
+            <p>Yes, Kraken offers a secure and easy to buy $100 worth of Bitcoin. At its current price, $100 equals
+              0.0016 BTC.</p>
+          </div>
+          <div class="*:mb-4">
+            <h4>Is Bitcoin safe to buy?</h4>
+            <p>The <span class="text-[#7132F5] font-semibold">Bitcoin price </span> can change dramatically based on
+              market conditions. You should do your own research on Bitcoin before buying.</p>
+          </div>
+        </div>
+
+        <div class="text-6xl mb-5 md:mb-14 mt-8 md:mt-52">Learn more about Bitcoin</div>
+
+        <div class="*:mb-3 *:py-3">
+          <div class="collapse collapse-arrow bg-gray-50">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title text-2xl font-medium"> How does Bitcoin work?</div>
+            <div class="collapse-content">
+              <p>Unlike traditional currencies, Bitcoin is not issued or maintained by a centralized government entity.
+                Instead, a decentralized network of computer nodes is responsible for maintaining Bitcoin. This
+                decentralization means the holders and users of Bitcoin can help to maintain the network.</p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-gray-50">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-2xl font-medium">Where can I buy Bitcoin?</div>
+            <div class="collapse-content">
+              <p>Most find that the easiest and most secure way to purchase Bitcoin is through a reliable cryptocurrency
+                platform like Kraken. While Bitcoin can be purchased using several different methods, Kraken offers the
+                security, support and simplicity people often look for when buying cryptocurrencies like Bitcoin.</p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-gray-50">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-2xl font-medium">Is Bitcoin available to buy and sell in my country?</div>
+            <div class="collapse-content">
+              <p>To find out if Kraken offers Bitcoin in your region, please check our <span
+                  class="text-[#7132F5] font-semibold">Support article </span> to see what cryptoassets are available in
+                your country.</p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-gray-50">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-2xl font-medium">Is Bitcoin a good investment?</div>
+            <div class="collapse-content">
+              <p>The short answer is, it depends on your own individual circumstances and risk tolerance. For those that
+                see a long term prospect behind decentralization, Bitcoin may be a worthwhile purchase.</p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-gray-50">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-2xl font-medium">Can I purchase Bitcoin using my local currency?</div>
+            <div class="collapse-content">
+              <p>Kraken supports six different government-issued fiat currencies including:</p>
+              <ul class="text-2xl *:ml-5 *:mb-3 mt-3">
+                <li>US dollars (USD)</li>
+                <li>Euros (EUR)</li>
+                <li>Canadian dollars (CAD)</li>
+                <li>Pounds sterling (GBP)</li>
+                <li>Swiss franc (CHF)</li>
+                <li>Australian dollar (AUD)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-gray-50">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-2xl font-medium">What are the transaction fees for buying Bitcoin?</div>
+            <div class="collapse-content">
+              <p>Kraken offers a competitive fee structure based on transaction size, asset, payment method and market
+                conditions. <span class="text-[#7132F5] font-semibold"> Learn more about Kraken’s fee structure.</span>
+              </p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-gray-50">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-2xl font-medium">What is the minimum amount of Bitcoin I can buy?</div>
+            <div class="collapse-content">
+              <p>You can buy as little as $10 worth of Bitcoin on Kraken. Kraken also allows you to set up recurring
+                buys (charges apply) so you can continuously accumulate small amounts of Bitcoin regularly.
+
+              </p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-gray-50">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-2xl font-medium">Can I buy Bitcoin with a debit card?</div>
+            <div class="collapse-content">
+              <p>You can buy Bitcoin using a debit card certain regions on Kraken.<span
+                  class="text-[#7132F5] font-semibold"> Learn more about our Supported currencies and payment methods
+                  here.</span></p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-gray-50">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-2xl font-medium">Can I buy Bitcoin with other cryptocurrencies?</div>
+            <div class="collapse-content">
+              <p>Yes, Kraken makes it easy to purchase Bitcoin using hundreds of other cryptocurrencies. Browse the
+                Bitcoin markets available on Kraken to see how much it costs to buy Bitcoin with other cryptocurrencies.
+              </p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-gray-50">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-2xl font-medium">
+              How can I keep my Bitcoin safe?</div>
+            <div class="collapse-content">
+              <p>While we believe the safest place for your crypto is in your own cold wallet, we strive to be as
+                transparent and secure as possible when you trust us with your Bitcoin. When you choose to keep your
+                Bitcoin on Kraken,<span class="text-[#7132F5] font-semibold"> it is secured by our globally-recognized
+                  security standards.</span></p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-gray-50">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-2xl font-medium">Will I owe taxes when buying and selling Bitcoin?</div>
+            <div class="collapse-content">
+              <p>Each country handles cryptocurrency taxes differently. It’s recommended you speak with a local
+                professional tax advisor before making any digital asset purchases or reporting your crypto taxes.</p>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="">
+          <div class="text-6xl mb-5 md:mb-14 mt-8 md:mt-52">Browse more crypto buying guides</div>
+          <p>With so many assets to choose from, deciding which crypto to buy can seem overwhelming. We've put together
+            guides for hundreds of top blockchain projects to help you navigate the process from A to Z. Take a look at
+            more buying guides below.</p>
+        </div>
+        <hr class="border-t-[0.2px]">
+
+        <div>
+          <div class="grid grid-cols-1 sm:grid-cols-2  gap-8 md:gap-12">
+
+            <div class="flex">
+              <img class="max-w-[4rem] h-fit mx-0 pr-2" src="./assets/images/sym-eth_colored.svg" alt="">
+              <div>
+                <h5 class="text-[#7132F5] font-semibold"> Buy Ethereum </h5>
+                <p>Ethereum (ETH) is a decentralized application network that allows developers to create their own
+                  cryptocurrencies, NFTs and other applications.</p>
+              </div>
+            </div>
+            <div class="flex">
+              <img class="max-w-[4rem] h-fit mx-0 pr-2" src="./assets/images/sym-usdt_colored.svg" alt="">
+              <div>
+                <h5 class="text-[#7132F5] font-semibold"> Buy Tether </h5>
+                <p>Tether (USDT) reserves consist of cash and cash equivalents and other short term deposits, amongst
+                  other assets as disclosed by Tether, with the aim to maintain a price of 1 USD per USDT.</p>
+              </div>
+            </div>
+            <div class="flex">
+              <img class="max-w-[4rem] h-fit mx-0 pr-2" src="./assets/images/sym-xrp_colored.svg" alt="">
+              <div>
+                <h5 class="text-[#7132F5] font-semibold"> Buy XRP </h5>
+                <p>XRP (XRP) is a fast and low-cost payment network that is backed by extensive partnerships with some
+                  of the world’s largest financial institutions.
+
+                </p>
+              </div>
+            </div>
+            <div class="flex">
+              <img class="max-w-[4rem] h-fit mx-0 pr-2" src="./assets/images/sym-ada_colored.svg" alt="">
+              <div>
+                <h5 class="text-[#7132F5] font-semibold"> Buy Cardano </h5>
+                <p>Cardano (ADA) ​​is powered by Ouroboros, a protocol that its proponents claim has improved upon
+                  security, scalability and energy efficiency versus other proof-of-work predecessors, like Bitcoin.</p>
+              </div>
+            </div>
+            <div class="flex">
+              <img class="max-w-[4rem] h-fit mx-0 pr-2" src="./assets/images/sym-doge_colored.svg" alt="">
+              <div>
+                <h5 class="text-[#7132F5] font-semibold"> Buy Dogecoin </h5>
+                <p>Dogecoin (DOGE) is a cryptocurrency focused on developing a strong community that features widespread
+                  recognition and a sense of humor. </p>
+              </div>
+            </div>
+            <div class="flex">
+              <img class="max-w-[4rem] h-fit mx-0 pr-2" src="./assets/images/sym-sol_colored.svg" alt="">
+              <div>
+                <h5 class="text-[#7132F5] font-semibold"> Buy Solana </h5>
+                <p>Solana (SOL) is a fast, scalable, and cost-effective blockchain platform for building decentralized
+                  applications that appeals to developers and users alike.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+
+          <div class="text-6xl mb-5 md:mb-14 mt-8 md:mt-52">Popular markets</div>
+          <p>Kraken lets you trade hundreds of cryptocurrencies beyond Bitcoin. Check out some of the top trading pairs
+            on Kraken today.</p>
+
+        </div>
+
+        <hr class="border-t-[0.2px]">
+
+        <div>
+          <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+
+            <div class="flex items-center">
+              <div class="flex items-center w-[6.7rem] relative">
+                <img class="max-w-[4rem] h-fit mx-0 pr-2" src="./assets/images/sym-sol_colored.svg" alt="">
+                <img class="max-w-[4.6rem] h-fit mx-0 pr-2 absolute right-0 border-4 border-white rounded-full"
+                  src="./assets/images/sym-eur_colored.svg" alt="">
+              </div>
+              <div>
+                <h5 class="text-[#7132F5] font-semibold hover:underline cursor-pointer"> SOL to EUR </h5>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="flex items-center w-[6.7rem] relative">
+                <img class="max-w-[4rem] h-fit mx-0 pr-2" src="./assets/images/sym-eth_colored.svg" alt="">
+                <img class="max-w-[4.6rem] h-fit mx-0 pr-2 absolute right-0 border-4 border-white rounded-full"
+                  src="./assets/images/sym-usd_colored.svg" alt="">
+              </div>
+              <div>
+                <h5 class="text-[#7132F5] font-semibold hover:underline cursor-pointer"> ETH to USD</h5>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="flex items-center w-[6.7rem] relative">
+                <img class="max-w-[4rem] h-fit mx-0 pr-2" src="./assets/images/sym-ltc_colored.svg" alt="">
+                <img class="max-w-[4.6rem] h-fit mx-0 pr-2 absolute right-0 border-4 border-white rounded-full"
+                  src="./assets/images/sym-usd_colored.svg" alt="">
+              </div>
+              <div>
+                <h5 class="text-[#7132F5] font-semibold hover:underline cursor-pointer"> LTC to USD </h5>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="flex items-center w-[6.7rem] relative">
+                <img class="max-w-[4rem] h-fit mx-0 pr-2" src="./assets/images/sym-sol_colored.svg" alt="">
+                <img class="max-w-[4.6rem] h-fit mx-0 pr-2 absolute right-0 border-4 border-white rounded-full"
+                  src="./assets/images/sym-usd_colored.svg" alt="">
+              </div>
+              <div>
+                <h5 class="text-[#7132F5] font-semibold hover:underline cursor-pointer"> SOL to USD </h5>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="flex items-center w-[6.7rem] relative">
+                <img class="max-w-[4rem] h-fit mx-0 pr-2" src="./assets/images/sym-usdt_colored.svg" alt="">
+                <img class="max-w-[4.6rem] h-fit mx-0 pr-2 absolute right-0 border-4 border-white rounded-full"
+                  src="./assets/images/sym-usd_colored.svg" alt="">
+              </div>
+              <div>
+                <h5 class="text-[#7132F5] font-semibold hover:underline cursor-pointer">
+                  USDT to USD </h5>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="flex items-center w-[6.7rem] relative">
+                <img class="max-w-[4rem] h-fit mx-0 pr-2" src="./assets/images/sym-xrp_colored.svg" alt="">
+                <img class="max-w-[4.6rem] h-fit mx-0 pr-2 absolute right-0 border-4 border-white rounded-full"
+                  src="./assets/images/sym-usd_colored.svg" alt="">
+              </div>
+              <div>
+                <h5 class="text-[#7132F5] font-semibold hover:underline cursor-pointer"> XRP to USD </h5>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="*:mb-4">
+          <div class="text-5xl mb-5 md:mb-14 mt-8 md:mt-52 text-[#2B1463]">Dive deeper</div>
+          <div class="border rounded-2xl relative">
+            <div class="flex items-center">
+              <img class="max-w-[20rem] h-fit md:max-w-[30rem] mx-0  rounded-l-2xl"
+                src="./assets/images/db21935a41c604147236c089ba49a4c2d1e399ab-1600x900.webp" alt="">
+              <div class="text-[#2B1463] md:*:my-5 p-5 md:p-10">
+                <div class="text-3xl  md:text-4xl font-medium">View all cryptocurrency prices</div>
+                <p class="hidden md:block">Find real-time prices for over 4,000 cryptocurrencies including Bitcoin,
+                  Ethereum, and altcoins.</p>
+              </div>
+              <div class="absolute top-0 right-0 mr-5 mt-5">
+                <div
+                  class="bg-[#EBE5FE] hover:bg-[#dacfff] cursor-pointer rounded-full  w-[4rem] h-[4rem] flex items-center justify-center">
+                  <i class="ri-arrow-right-line text-[#7132F5] text-5xl"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border rounded-2xl relative">
+            <div class="flex items-center">
+              <img class="max-w-[20rem] h-fit md:max-w-[30rem] mx-0  rounded-l-2xl"
+                src="./assets/images/6e935479ad05a027c8de39c2afc0c7995f9bb614-1600x900.webp" alt="">
+              <div class="text-[#2B1463] md:*:my-5 p-5 md:p-10">
+                <div class="text-3xl  md:text-4xl font-medium">Learn about Bitcoin</div>
+                <p class="hidden md:block">Bitcoin (BTC) is the world’s top crypto by market cap and has the potential
+                  to become a globally accepted digital store of value. Learn more today.</p>
+              </div>
+              <div class="absolute top-0 right-0 mr-5 mt-5">
+                <div
+                  class="bg-[#EBE5FE] hover:bg-[#dacfff] cursor-pointer rounded-full  w-[4rem] h-[4rem] flex items-center justify-center">
+                  <i class="ri-arrow-right-line text-[#7132F5] text-5xl"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border rounded-2xl relative">
+            <div class="flex items-center">
+              <img class="max-w-[20rem] h-fit md:max-w-[30rem] mx-0  rounded-l-2xl"
+                src="./assets/images/92baa95a29030bb4d626ca364eaa3533129e4da2-1600x900.webp" alt="">
+              <div class="text-[#2B1463] md:*:my-5 p-5 md:p-10">
+                <div class="text-3xl  md:text-4xl font-medium">Learn about Shiba Inu Coin</div>
+                <p class="hidden md:block">Shiba Inu (SHIB) is a popular dog-themed cryptocurrency that gained
+                  popularity for its meme-inspired branding and active community. Learn more today.</p>
+              </div>
+              <div class="absolute top-0 right-0 mr-5 mt-5">
+                <div
+                  class="bg-[#EBE5FE] hover:bg-[#dacfff] cursor-pointer rounded-full  w-[4rem] h-[4rem] flex items-center justify-center">
+                  <i class="ri-arrow-right-line text-[#7132F5] text-5xl"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+
+
+
+
+    </section>
+
+
+  </main>
+
+
+
+  <footer class="mt-20  bg-[#7132F5] py-10 md:py-20 custom" id="footer">
+    <div class="container mx-auto max-w-screen-xl">
+
+
+      <div class="md:flex justify-between gap-10">
+        <div class="flex my-5 flex-col md:max-w-[25rem]">
+          <a href="./index.html">
+            <h1 class="text-5xl font-semibold text-white">Coin<span class="text-yellow-400">Apex</span> </h1>
+          </a>
+          <h4 class="text-[#C0B9FF] mt-4">Take your crypto trading to the next level.</h4>
+
+
+            <button
+             onclick="url()" class="py-5 px-10 w-full my-5 bg-white text-[#7132F5] rounded-full text-2xl font-semibold hover:bg-slate-200  transition">
+              Create account</button>
+  
+            <button
+             onclick="url()" class="py-5 px-10 w-full border-white border text-white rounded-full text-2xl font-semibold hover:bg-[#6940c3] hover:text-white transition">
+              Sign in</button>
+
+          <div class="flex max-w-fit gap-2 mt-20 *:max-w-[5rem]">
+            <img src="./assets/images/download.png" alt="">
+            <img src="./assets/images/kraken-pro-app-2b99dee9cb051800c54085bced98f189.webp" alt="">
+            <img src="./assets/images/kraken-wallet-app-f72e29497351d949d010a08e3fb6d8e9.webp" alt="">
+          </div>
+
+
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10">
+          <div class="*:my-5">
+            <h3 class="text-[#C0B9FF]">Features</h3>
+            <div class="*:my-2 flex flex-col">
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">NFT Marketplace</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Margin Trading</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Futures Trading</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">OTC Trading</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Institutions</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">API Trading</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Staking Rewards</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">All features</a>
+            </div>
+          </div>
+
+          <div class="*:my-5">
+            <h3 class="text-[#C0B9FF]">Browse Prices</h3>
+            <div class="*:my-2 flex flex-col">
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Bitcoin Price</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Ethereum Price</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Dogecoin Price</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">XRP Price</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Cardano Prices</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Solana Price</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Litecoin Price</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">All crypto prices</a>
+            </div>
+          </div>
+
+          <div class="*:my-5">
+            <h3 class="text-[#C0B9FF]">Buying Guides</h3>
+            <div class="*:my-2 flex flex-col">
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Buy Bitcoin</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Buy Ethereum</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Buy Dogecoin</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Buy XRP</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Buy Cardano</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Buy Solana</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Buy Litecoin</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">All crypto guides</a>
+            </div>
+          </div>
+
+          <div class="*:my-5">
+            <h3 class="text-[#C0B9FF]">Company</h3>
+            <div class="*:my-2 flex flex-col">
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Kraken Security</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Kraken Careers</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Kraken Blog</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Press Room</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Affiliate Program</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Asset Listings</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Kraken Status</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Support Center</a>
+            </div>
+          </div>
+
+          <div class="*:my-5">
+            <h3 class="text-[#C0B9FF]">Popular Markets
+            </h3>
+            <div class="*:my-2 flex flex-col">
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">BTC to USD</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">ETH to USD</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">DOGE to USD</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">XRP to USD</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">ADA to USD</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">SOL to USD</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">LTC to USD</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">All crypto markets</a>
+            </div>
+          </div>
+
+          <div class="*:my-5">
+            <h3 class="text-[#C0B9FF]">Crypto Education</h3>
+            <div class="*:my-2 flex flex-col">
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">What is cryptocurrency?</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Types of cryptocurrency</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">What is a blockchain?</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">What is Bitcoin?</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">What is Ethereum?</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">What is an NFT?</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">What is a DAO?</a>
+              <a href="" class=" text-white text-2xl hover:text-[#9B6EF8]">Learn crypto</a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <hr class="border-t-[0.1px] opacity-10 mt-20">
+      <div class="flex *:text-[#C0B9FF] flex-wrap *:text-xl gap-10 py-7">
+        <div>© 2011 - 2024 Payward, Inc.</div>
+        <div class="underline">Privacy Notice</div>
+        <div class="underline">Terms of Service</div>
+        <div class="underline">Cookie Settings</div>
+        <div class="underline">Disclosures</div>
+      </div>
+      <hr class="border-t-[0.1px] opacity-10">
+
+
+      <div class="text-xl text-[#C0B9FF] py-10">These materials are for general information purposes only and are not
+        investment advice or a recommendation or solicitation to buy, sell, stake or hold any cryptoasset or to engage
+        in any specific trading strategy. Kraken does not and will not work to increase or decrease the price of any
+        particular cryptoasset it makes available. Some crypto products and markets are unregulated, and you may not be
+        protected by government compensation and/or regulatory protection schemes. The unpredictable nature of the
+        crypto-asset markets can lead to loss of funds. Tax may be payable on any return and/or on any increase in the
+        value of your cryptoassets and you should seek independent advice on your taxation position. Geographic
+        restrictions may apply.</div>
+
+
+    </div>
+
+  </footer>
+  <div id="backtotop"></div>
+
+
+
+
+  <script src="./assets/javascript.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  
+</body>
+
+</html>
